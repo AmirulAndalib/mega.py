@@ -40,10 +40,7 @@ def test():
     print((m.upload(filename='examples.py',
                     dest_filename=f'examples_{unique}.py')))
 
-    # search for a file in account
-    file = m.find(f'examples_{unique}.py')
-
-    if file:
+    if file := m.find(f'examples_{unique}.py'):
         # get public link
         link = m.get_link(file)
         print(link)
@@ -54,10 +51,6 @@ def test():
 
         # delete or destroy file. by id or url
         print((m.delete(file[0])))
-        # print(m.destroy(file[0]))
-        # print(m.delete_url(link))
-        # print(m.destroy_url(link))
-
     # empty trash
     print((m.empty_trash()))
 

@@ -169,8 +169,7 @@ class TestFind:
 
 
 def test_rename(mega, folder_name):
-    file = mega.find(folder_name)
-    if file:
+    if file := mega.find(folder_name):
         resp = mega.rename(file, folder_name)
         assert isinstance(resp, int)
 
